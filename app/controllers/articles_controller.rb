@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   private
   
   def fetch_article
-    article = File.read('tmp/articles.xml')
+    article = File.read('public/articles.xml')
     articles = article.scan(/<title>(.+)<\/title>\s+<link>.+<\/link>\s+<comments>.+<\/comments>\s+<pubDate>(.+)<\/pubDate>/)
     articles.sort_by!{|a,b|a[1].to_time <=> b[1].to_time}
   end
