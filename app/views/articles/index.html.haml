@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-xs-12.col-md-8
+      %table.table
+        %thead
+          %tr
+            %th= "Article's title"
+            %th= "Published Date"
+        %tbody
+          -@articles.each do |article|
+            %tr
+              %td= article[0]
+              %td= article[1]
